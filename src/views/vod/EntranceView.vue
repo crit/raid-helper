@@ -31,9 +31,9 @@ const locations = {
 }
 
 const blankSet = [
-  {id: "blank", name: "Blank", path: "/assets/vod/blank.png", raid: "vod"},
-  {id: "blank", name: "Blank", path: "/assets/vod/blank.png", raid: "vod"},
-  {id: "blank", name: "Blank", path: "/assets/vod/blank.png", raid: "vod"}
+  {id: "blank", name: "Blank", path: "assets/vod/blank.png", raid: "vod"},
+  {id: "blank", name: "Blank", path: "assets/vod/blank.png", raid: "vod"},
+  {id: "blank", name: "Blank", path: "assets/vod/blank.png", raid: "vod"}
 ]
 
 export default {
