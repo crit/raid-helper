@@ -1,8 +1,9 @@
 <template>
-  <Breadcrumb raid="vod" encounter="acq"/>
+  <Breadcrumb raid="vod" encounter="exi"/>
+  <p class="text-center">First two rooms skipped since they are easy.</p>
   <div class="text-center totem">
     <div v-for="(item, i) in items" :class="styler(i)">
-      <img class="symbol-display" :src="item.path"/>
+      <img :src="item.path" :alt="item.id" class="symbol-display">
       <p class="text-center">{{item.name}}</p>
     </div>
   </div>
@@ -11,10 +12,9 @@
 
 <script>
 import Breadcrumb from "@/components/Breadcrumb";
+import VodSymbolKeyboard from "@/components/vod/VodSymbolKeyboard";
 import Storage from "@/data/storage";
 import RingBuffer from "@/common/RingBuffer";
-import VodSymbolKeyboard from "@/components/vod/VodSymbolKeyboard";
-import {symbols} from "@/data/symbols";
 
 const version = "v0.1"
 
@@ -23,20 +23,15 @@ const emptySet = [
   {id: "blank", name: "Blank", path: "assets/vod/blank.png", raid: "vod"},
   {id: "blank", name: "Blank", path: "assets/vod/blank.png", raid: "vod"},
   {id: "blank", name: "Blank", path: "assets/vod/blank.png", raid: "vod"},
-  {id: "blank", name: "Blank", path: "assets/vod/blank.png", raid: "vod"},
-  {id: "blank", name: "Blank", path: "assets/vod/blank.png", raid: "vod"},
-  {id: "blank", name: "Blank", path: "assets/vod/blank.png", raid: "vod"},
-  {id: "blank", name: "Blank", path: "assets/vod/blank.png", raid: "vod"},
-  {id: "blank", name: "Blank", path: "assets/vod/blank.png", raid: "vod"},
 ]
 
 export default {
-  name: "AcquisitionView",
-  components: {Breadcrumb, VodSymbolKeyboard},
+  name: "ExhibitionView",
+  components: {VodSymbolKeyboard, Breadcrumb},
   data: () => ({
-    storage: Storage(`vod-acq-${version}`),
+    storage: Storage(`vod-exi-${version}`),
     buffer: new RingBuffer([...emptySet]),
-    excluded: ['dark', 'light', 'traveler', 'pyramid', 'knowledge', 'drink', 'commune', 'kill', 'worship', 'enter', 'give', 'grieve', 'stop']
+    excluded: []
   }),
   computed: {
     items() {
@@ -76,7 +71,7 @@ export default {
 
 .totem {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(2, auto);
   max-width: 500px;
   margin: 30px auto 10px;
 }

@@ -2,12 +2,12 @@
   <div class="keyboard-wrapper">
     <div class="keyboard">
       <div
-          class="keyboard-key text-center"
           v-for="symbol in symbols"
           :key="symbol.id"
           @click="selectSymbol(symbol)"
+          class="keyboard-key text-center"
       >
-        <img class="symbol-display" :src="symbol.path" :class="highlight"/>
+        <img :alt="symbol.id" class="symbol-display" :src="symbol.path"/>
       </div>
     </div>
   </div>
@@ -19,33 +19,30 @@ import {symbols} from "@/data/symbols";
 export default {
   name: "VodSymbolKeyboard",
   props: {
-    only: []
+    exclude: Array,
+    only: Array
   },
-  data: () => ({
-    selected: null
-  }),
   computed: {
     symbols() {
-      return symbols.filter(symbol => symbol.raid === 'vod')
+      const exclude = this.exclude || []
+      const only = this.only || []
+
+      const inRaid = symbols.filter(symbol => symbol.raid === 'vod')
+
+      if (exclude.length) {
+        return [...inRaid.filter(symbol => exclude.indexOf(symbol.id) === -1)]
+      }
+
+      if (only.length) {
+        return [...inRaid.filter(symbol => only.indexOf(symbol.id) !== -1)]
+      }
+
+      return inRaid
     },
   },
   methods: {
     selectSymbol(symbol) {
-      this.selected = symbol
-
-      setTimeout(() => {
-        this.selected = null
-      }, 650)
-
       this.$emit('symbol:selected', symbol)
-    },
-
-    highlight(symbol) {
-      if (!this.only.length) {
-        return ''
-      }
-
-      return ''
     }
   }
 }
@@ -55,6 +52,7 @@ export default {
   .keyboard-wrapper {
     margin: 25px auto 0;
     max-width: 500px;
+    touch-action: manipulation;
   }
 
   .keyboard {

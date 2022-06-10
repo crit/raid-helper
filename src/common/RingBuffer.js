@@ -24,4 +24,10 @@ export default class RingBuffer {
 
         this.cursor = cursor
     }
+
+    reset(data = []) {
+        this.resetAt = data.length - 1
+        this.data = data
+        this.cursor = 0
+    }
 }

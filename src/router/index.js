@@ -31,6 +31,11 @@ const routes = [
     path: '/vod-acq',
     name: 'vod-acq',
     component: () => import(/* webpackChunkName: "vod-acq" */ '../views/vod/AcquisitionView.vue')
+  },
+  {
+    path: '/vod-exi',
+    name: 'vod-exi',
+    component: () => import(/* webpackChunkName: "vod-acq" */ '../views/vod/ExhibitionView.vue')
   }
 ]
 

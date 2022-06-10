@@ -1,7 +1,8 @@
 const namespace = "raid-helper"
+const version = "v0.1"
 
 const Storage = (table) => {
-    table = `${namespace}:${table}`
+    table = `${namespace}:${table}:${version}`
 
     return {
         read() {
