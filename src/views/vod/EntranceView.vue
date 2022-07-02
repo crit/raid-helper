@@ -20,16 +20,29 @@ import RingBuffer from "@/common/RingBuffer";
 
 const version = "v0.1"
 
+const descriptions = [
+  "In the first room after you drop down when you first enter the pyramid",
+  "In the room just after the room with the frozen Scorn, before the first encounter",
+  "In the first encounter room",
+  "In the room with the purple wall directly before the second encounter",
+  "In the final stand area of the second encounter",
+  "In the jumping puzzle after the second encounter, in the room where the first Darkness Crux used for the jumping puzzle is",
+  "Further along in the jumping puzzle, after the second encounter",
+  "To the left immediately after the third encounter",
+  "Before the final boss, where you have to climb up the side walls",
+]
+
+// tuple of id to sort key.
 const locations = {
-  "pyramid": "In the first room after you drop down when you first enter the pyramid",
-  "give": "In the room just after the room with the frozen Scorn, before the first encounter",
-  "dark": "In the first encounter room",
-  "traveler": "In the room with the purple wall directly before the second encounter",
-  "worship": "In the final stand area of the second encounter",
-  "light": "In the jumping puzzle after the second encounter, in the room where the first Darkness Crux used for the jumping puzzle is",
-  "stop": "Further along in the jumping puzzle, after the second encounter",
-  "guardian": "To the left immediately after the third encounter",
-  "kill": "Before the final boss, where you have to climb up the side walls",
+  "pyramid": 0,
+  "give": 1,
+  "dark": 2,
+  "traveler": 3,
+  "worship": 4,
+  "light": 5,
+  "stop": 6,
+  "guardian": 7,
+  "kill": 8,
 }
 
 const emptySet = [
@@ -58,9 +71,11 @@ export default {
   computed: {
     directions() {
       return this.buffer.items()
-          .map(item => item.id)
-          .filter((v, i, a) => a.indexOf(v) === i)
-          .map(id => locations[id])
+        .map(item => item.id)
+        .filter((v, i, a) => a.indexOf(v) === i)
+        .map(id => locations[id])
+        .sort()
+        .map(id => descriptions[id])
     },
 
     items() {
