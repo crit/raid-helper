@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ssh crit@critbot.local 'sudo journalctl -u xur-worker -f'

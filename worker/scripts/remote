@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -e
+
+sudo su
+
+# start worker on raspberry pi boot
+touch /etc/systemd/system/xur-worker.service
+
+cat << EOF > /etc/systemd/system/xur-worker.service
+[Unit]
+Description=Xur Worker
+DefaultDependencies=no
+After=local-fs.target
+[Service]
+ExecStart=/home/crit/xur-worker
+[Install]
+WantedBy=sysinit.target
+EOF
+
+systemctl enable xur-worker
+systemctl start xur-worker
+
+reboot

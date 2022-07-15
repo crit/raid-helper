@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+
+rsync dist/xur-worker crit@critbot.local:~/
+rsync xur-worker.env crit@critbot.local:~/

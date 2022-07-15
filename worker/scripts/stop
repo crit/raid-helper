@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+ssh crit@critbot.local 'sudo systemctl stop xur-worker'
