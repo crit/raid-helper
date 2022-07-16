@@ -2,11 +2,14 @@
 node_modules
 /dist
 /versions
-
+/worker/responses
+/worker/dist
 
 # local env files
 .env.local
 .env.*.local
+run
+xur-worker.env
 
 # Log files
 npm-debug.log*

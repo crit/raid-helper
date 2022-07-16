@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+ssh crit@critbot.local 'sudo touch /etc/systemd/system/xur-worker.service'

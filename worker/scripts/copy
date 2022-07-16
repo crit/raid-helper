@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+rsync dist/xur-worker crit@critbot.local:~/
+rsync xur-worker.env crit@critbot.local:~/
+
+rsync xur-worker.service crit@critbot.local:~/
+ssh crit@critbot.local 'sudo mv /home/crit/xur-worker.service /etc/systemd/system/xur-worker.service'
+ssh crit@critbot.local 'sudo systemctl daemon-reload'
+ssh crit@critbot.local 'sudo systemctl restart xur-worker'
