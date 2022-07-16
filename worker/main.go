@@ -1,24 +1,28 @@
 package main
 
 import (
+	"flag"
 	"log"
 	"time"
 
+	"github.com/crit/raid-helper/worker/internal"
 	"github.com/crit/raid-helper/worker/internal/storage"
 	"github.com/crit/raid-helper/worker/internal/xur"
 	"github.com/robfig/cron/v3"
-	"github.com/subosito/gotenv"
 )
 
 var (
 	store storage.FileStorage
 )
 
+// ./xur-worker xur-worker.env
 func main() {
 	var err error
 
-	// load env values
-	err = gotenv.Load("/home/crit/xur-worker.env")
+	flag.Parse()
+
+	// load env file
+	err = internal.LoadEnvFile(flag.Arg(0))
 	if err != nil {
 		log.Fatal(err)
 	}
