@@ -4,6 +4,7 @@ go 1.18
 
 require (
 	github.com/aws/aws-sdk-go v1.44.56
+	github.com/jmoiron/jsonq v0.0.0-20150511023944-e874b168d07e
 	github.com/robfig/cron/v3 v3.0.1
 	github.com/stretchr/testify v1.8.0
 	github.com/subosito/gotenv v1.4.0

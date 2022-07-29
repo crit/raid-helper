@@ -46,14 +46,14 @@ func main() {
 		cron.WithChain(cron.Recover(cron.DefaultLogger)),
 	)
 
-	// Run at 3am on Friday every week
-	_, err = c.AddFunc("0 3 * * FRI", writeXurLocation)
+	// At minute 23 past every hour from 10 through 16 on Friday.
+	_, err = c.AddFunc("23 10-16 * * FRI", writeXurLocation)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	// Run at 3am on Friday every week
-	// _, err = c.AddFunc("0 03 * * FRI", writeXurInventory)
+	// Run at 10am MST on Friday every week
+	// _, err = c.AddFunc("0 10 * * FRI", writeXurInventory)
 	// if err != nil {
 	// 	log.Fatal(err)
 	// }
@@ -70,13 +70,17 @@ func writeXurLocation() {
 	}
 
 	if res == nil {
+		log.Println("xur location not available")
 		return
 	}
 
 	err = store.Set("data/xur-location.json", res.Bytes())
 	if err != nil {
 		log.Printf("unable to write xur-location.json: %v", err)
+		return
 	}
+
+	log.Println("xur location written")
 }
 
 func writeXurInventory() {

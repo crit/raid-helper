@@ -54,7 +54,7 @@ func (c *Client) Get(receiver any, uri string) error {
 
 	if res.StatusCode >= 400 {
 		raw, _ := ioutil.ReadAll(res.Body)
-		return errors.New(res.StatusCode, string(raw))
+		return errors.New(res.StatusCode, "url: %s; cat: %s...", req.URL.String(), raw[0:80])
 	}
 
 	err = json.NewDecoder(res.Body).Decode(receiver)
