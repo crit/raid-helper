@@ -1,5 +1,9 @@
 <template>
   <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <router-link to="/xur">Xur</router-link>
+    </li>
+
     <!--Home-->
     <li class="breadcrumb-item">
       <router-link to="/">Raids</router-link>

@@ -33,6 +33,11 @@ const routes = [
     path: '/vod-exi',
     name: 'vod-exi',
     component: () => import(/* webpackChunkName: "vod-exi" */ '../views/vod/ExhibitionView.vue')
+  },
+  {
+    path: '/xur',
+    name: 'xur',
+    component: () => import(/* webpackChunkName: "xur" */ '../views/XurView.vue')
   }
 ]
 
