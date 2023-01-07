@@ -38,6 +38,16 @@ const routes = [
     path: '/xur',
     name: 'xur',
     component: () => import(/* webpackChunkName: "xur" */ '../views/XurView.vue')
+  },
+  {
+    path: '/kf',
+    name: 'kf',
+    component: () => import(/* webpackChunkName: "kf" */ '../views/kf/EncounterListView.vue'),
+  },
+  {
+    path: '/kf-kfc',
+    name: 'kf-kfc',
+    component: () => import(/* webpackChunkName: "kf-kfc" */ '../views/kf/EntranceView.vue'),
   }
 ]
 

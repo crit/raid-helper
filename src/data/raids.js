@@ -4,5 +4,6 @@ export const raids = [
     {id: "riv", name: "Last Wish", active: false},
     {id: "sal", name: "Garden of Salvation", active: false},
     {id: "dsc", name: "Deep Stone Crypt", active: false},
-    {id: "vog", name: "Vault of Glass", active: false}
+    {id: "vog", name: "Vault of Glass", active: false},
+    {id: "kf", name: "Kings Fall", active: true}
 ]
