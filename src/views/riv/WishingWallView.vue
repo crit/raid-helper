@@ -30,12 +30,6 @@ export default {
   data: () => ({
     wish: WishConfigurations.BlankWall,
   }),
-  created() {
-
-  },
-  computed: {
-
-  },
   methods: {
     show(index) {
       if (index === -1) {
