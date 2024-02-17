@@ -19,7 +19,6 @@
 
 <script>
 import Breadcrumb from "@/components/Breadcrumb";
-import Storage from "@/data/storage";
 import PlateIcon from "@/components/riv/PlateIcon.vue";
 import {WishConfigurations} from "@/data/wishes";
 
