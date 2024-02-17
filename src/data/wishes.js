@@ -80,10 +80,10 @@ Wish4.values = [
 
 const Wish5 = new Wish(5, "For A Promising Future", "Raid, ascendant realm after Shuro Chi", "Warp to Morgeth")
 Wish5.values = [
-    SnakeInfinity, DragonDown, BirdLeft, DragonDown, SnakeInfinity,
-    BlankIcon, DragonLeft, BirdBehind, DragonLeft, BlankIcon,
-    BlankIcon, DragonLeft, BirdLeft, DragonLeft, BlankIcon,
-    SnakeInfinity, DragonDown, BirdLeft, DragonDown, SnakeInfinity,
+    SnakeInfinity, DragonDown, BirdLeft,   DragonDown, SnakeInfinity,
+    BlankIcon,     DragonLeft, BirdBehind, DragonLeft, BlankIcon,
+    BlankIcon,     DragonLeft, BirdLeft,   DragonLeft, BlankIcon,
+    SnakeInfinity, DragonDown, BirdLeft,   DragonDown, SnakeInfinity,
 ]
 
 const Wish6 = new Wish(6, "To Move The Hands Of Time", "Raid, before elevator to the vault", "Warp to Vault")

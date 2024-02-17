@@ -11,7 +11,7 @@
   </div>
 
   <div class="keyboard">
-    <div v-for="(_, index) in Array(14)" @click="show(index+1)">{{index+1}}</div>
+    <div v-for="(_, index) in Array(14)" :class="selected(index+1)" @click="show(index+1)">{{index+1}}</div>
     <div @click="show(0)">B</div>
     <div @click="show(-1)">S</div>
   </div>
@@ -53,6 +53,10 @@ export default {
       }
 
       this.wish = wish;
+    },
+
+    selected(index) {
+      return index === this.wish.id ? 'selected' : ''
     }
   }
 }
@@ -102,6 +106,11 @@ export default {
 }
 
 .keyboard div:hover {
+  background: gray;
+}
 
+.keyboard div.selected {
+  background: white;
+  color: black;
 }
 </style>

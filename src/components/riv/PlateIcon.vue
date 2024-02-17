@@ -21,7 +21,7 @@ const data = [
   {id: 12, name: 'dragon-down'},
 
   // Bird
-  {id: 13, name: 'bird-diving'},
+  {id: 13, name: 'bird-down'},
   {id: 14, name: 'bird-perched'},
   {id: 15, name: 'bird-left'},
   {id: 16, name: 'bird-behind'},
@@ -142,7 +142,7 @@ export default {
   left: -240px;
 }
 
-.bird-diving {
+.bird-down {
   top: -13px;
   left: -12px;
 }
