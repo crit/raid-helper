@@ -17,7 +17,7 @@ const routes = [
   {
     path: '/vod',
     name: 'vod',
-    component: () => import(/* webpackChunkName: "vod" */ '../views/vod/EncounterListView.vue'),
+    component: () => import(/* webpackChunkName: "vod" */ '../views/vod/EncounterListView.vue')
   },
   {
     path: '/vod-ent',
@@ -42,12 +42,22 @@ const routes = [
   {
     path: '/kf',
     name: 'kf',
-    component: () => import(/* webpackChunkName: "kf" */ '../views/kf/EncounterListView.vue'),
+    component: () => import(/* webpackChunkName: "kf" */ '../views/kf/EncounterListView.vue')
   },
   {
     path: '/kf-kfc',
     name: 'kf-kfc',
-    component: () => import(/* webpackChunkName: "kf-kfc" */ '../views/kf/EntranceView.vue'),
+    component: () => import(/* webpackChunkName: "kf-kfc" */ '../views/kf/EntranceView.vue')
+  },
+  {
+    path: '/riv',
+    name: 'riv',
+    component: () => import(/* webpackChunkName: "riv" */ '../views/riv/EncounterListView.vue')
+  },
+  {
+    path: '/riv-rww',
+    name: 'riv-rww',
+    component: () => import(/* webpackChunkName: "riv-rww" */ '../views/riv/WishingWallView.vue')
   }
 ]
 
