@@ -22,8 +22,6 @@ import Breadcrumb from "@/components/Breadcrumb";
 import PlateIcon from "@/components/riv/PlateIcon.vue";
 import {WishConfigurations} from "@/data/wishes";
 
-const version = "v0.1"
-
 export default {
   name: "WishingWallView",
   components: {PlateIcon, Breadcrumb},
